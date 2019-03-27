@@ -1,9 +1,16 @@
+// REACT
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// CSS
+import './index.scss';
+import '@fortawesome/fontawesome-free/js/all.js';
+// COMPONENTES
 import App from './App';
+
+// Workers
 import * as serviceWorker from './serviceWorker';
 
+// Agregar al HTML
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

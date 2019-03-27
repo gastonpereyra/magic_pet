@@ -1,12 +1,19 @@
 {
+  "author": "Gastón Pereyra",
   "name": "magic_pet",
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
+    "react-pose": "^4.0.8",
     "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
+    "bulma": "^0.7.4",
+    "node-sass": "^4.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
