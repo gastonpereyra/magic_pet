@@ -1,25 +1,41 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
+
 // Variables personalizadas
-$purple: #8A4D76;
-$primary: $purple;
+//$purple: #8A4D76;
+//$primary: $purple;
 
 // Clases extras
-
-.has-background-presentation {
-    background: 
-    /* top, transparent red */ 
-    linear-gradient(
-        hsla(217, 71%, 53%, 0.25), 
-        hsla(217, 71%, 53%, 0.25)
-    ),
-    /* bottom, image */
-    url(https://tocaboca.com/wp-content/uploads/2014/11/cover1-1024x409.png);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-}
 
 // Bulma Style
 @import "../node_modules/bulma/bulma.sass";
 
+body {
+    font-family: 'Baloo Bhaina', cursive;
+}
 
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.image-back {
+    position: absolute;
+    left: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    object-fit: fill;
+    z-index: 1;
+}
+
+.text-overlay {
+    z-index: 2;
+}

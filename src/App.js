@@ -1,16 +1,21 @@
 import React, {useState, useLayoutEffect} from 'react';
+// https://api.sheety.co/3d937c6d-cf04-4ad8-af9a-1a6c4f99c476
+// https://api.sheety.co/3b8a7b2e-4d6d-422a-8f87-aa58060d6b4c
+
+const $navBarStyle = 'navbar is-primary'
 
 const App = () => {
-  const [navBarStyle, setNavBarStyle] = useState('navbar is-primary');
+
+  const [navBarStyle, setNavBarStyle] = useState($navBarStyle);
   const [navBarMenu, setNaBarMenu]  = useState(false);
 
   useLayoutEffect( () => {
     window.addEventListener('scroll', () => {
       if (document.body.scrollTop > (window.innerHeight*0.75) || 
           document.documentElement.scrollTop > (window.innerHeight*0.75)) {
-            setNavBarStyle('navbar is-primary is-fixed-top')
+            setNavBarStyle($navBarStyle+' is-fixed-top')
       } else {
-        setNavBarStyle('navbar is-primary')
+        setNavBarStyle($navBarStyle)
       }
     });
   })
@@ -19,7 +24,7 @@ const App = () => {
       <nav className={navBarStyle} role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="Company"/>
+            <img src="assets/icon-w.svg" width="28" height="28" alt="Company"/>
           </a>
 
           <button className="navbar-burger burger" aria-label="menu" aria-expanded="false" onClick={() => setNaBarMenu(!navBarMenu)}>
@@ -77,12 +82,20 @@ const App = () => {
         </div>
       </nav>
 
-      <section className="hero is-info is-fullheight-with-navbar">
+      <section className="hero is-primary is-fullheight-with-navbar has-background-presentation">
         <div className="hero-body">
-          <div className="container">
-            <p className="title">
-              Fullheight hero with navbar
-            </p>
+          <div className="image-overlay"></div>
+          <figure className="image image-back is-16by9">
+            <img src="assets/cover.png" alt="Fondo"/>
+          </figure> 
+          <div className="container text-overlay">
+            <figure className="image is-128x128 is-pulled-left">
+              <img src="assets/icon-w.svg" alt="Company"/>
+            </figure>
+            <h1 className="title is-1">
+              <b>Magic Vet</b>
+            </h1>
+            <h2 className="subtitle is-3">Un ser Mágico te esta esperando.</h2>
           </div>
         </div>
       </section>
