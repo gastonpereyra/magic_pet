@@ -2,11 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
 
 // Variables personalizadas
-//$purple: #8A4D76;
-//$primary: $purple;
-
 // Clases extras
-
 // Bulma Style
 @import "../node_modules/bulma/bulma.sass";
 
@@ -14,6 +10,7 @@ body {
     font-family: 'Baloo Bhaina', cursive;
 }
 
+// Para el Banner
 .image-overlay {
     position: absolute;
     top: 0;
