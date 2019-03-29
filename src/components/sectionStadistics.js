@@ -11,7 +11,7 @@ const Stadistics = () => {
                 <nav className="level box">
                     <div className="level-item has-text-centered">
                         <div>
-                            <figure className="image is-64x64 is-pulled-left">
+                            <figure className="image is-64x64">
                                 <img src="assets/ani_pegasus.png" alt="Company"/>
                             </figure>
                             <p className="heading">Pegasos</p>
@@ -20,7 +20,7 @@ const Stadistics = () => {
                     </div>
                     <div className="level-item has-text-centered">
                         <div>
-                            <figure className="image is-64x64 is-pulled-left">
+                            <figure className="image is-64x64">
                                 <img src="assets/ani_kraken.png" alt="Company"/>
                             </figure>
                             <p className="heading">Krakens</p>
@@ -29,7 +29,7 @@ const Stadistics = () => {
                     </div>
                     <div className="level-item has-text-centered">
                         <div>
-                            <figure className="image is-64x64 is-pulled-left">
+                            <figure className="image is-64x64">
                                 <img src="assets/ani_dragon.png" alt="Company"/>
                             </figure>
                             <p className="heading">Dragones</p>
@@ -38,7 +38,7 @@ const Stadistics = () => {
                     </div>
                     <div className="level-item has-text-centered">
                         <div>
-                            <figure className="image is-64x64 is-pulled-left">
+                            <figure className="image is-64x64">
                                 <img src="assets/ani_phoenix.png" alt="Company"/>
                             </figure>
                             <p className="heading">Fenixs</p>
@@ -47,7 +47,7 @@ const Stadistics = () => {
                     </div>
                     <div className="level-item has-text-centered">
                         <div>
-                            <figure className="image is-64x64 is-pulled-left">
+                            <figure className="image is-64x64">
                                 <img src="assets/ani_griffin.png" alt="Company"/>
                             </figure>
                             <p className="heading">Grifos</p>
