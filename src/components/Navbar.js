@@ -41,7 +41,7 @@ const Navbar = () => {
                 <a className="navbar-item" href="#Training">
                     Entrenados
                 </a>
-                <a className="navbar-item" href="#Personal">
+                <a className="navbar-item" href="#Profesional">
                     Profesionales
                 </a>
             </div>
