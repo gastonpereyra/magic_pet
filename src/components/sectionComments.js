@@ -80,37 +80,32 @@ const Comment = ({name='Anonymus',message='',link=''}) => {
                     </span>
                 </a>}
             </div>
-            <div className="message-body">
+            <div className="message-body is-240">
                 {message}
             </div>
         </article>
     )
 }
 
-const Pagination = ({count, max, actual, changePage}) => {
-    const items =  [ ...Array(max).keys() ];
+const Pagination = ({count, max, actual, changePage, children}) => {
 
     return (
         <nav className="pagination is-centered" role="navigation" aria-label="pagination">
-                <button className="pagination-previous button is-rounded is-warning" onClick={() => changePage( actual>0 ? actual-count : 0)}>
+                <button className="pagination-previous button is-rounded is-warning" onClick={() => changePage( actual>0 ? actual-count : max-1)}>
                     <span className="icon">
                         <i className="fas fa-chevron-circle-left "></i>
                     </span>
                 </button>
-                <button className="pagination-next button is-rounded is-warning" onClick={() => changePage(actual+count < max ? actual+count : actual)}>
+                <button className="pagination-next button is-rounded is-warning" onClick={() => changePage(actual+count < max ? actual+count : 0)}>
                     <span className="icon">
                         <i className="fas fa-chevron-circle-right "></i>
                     </span>
                 </button>
-                <ul className="pagination-list">
-                    {items.filter((c,i) => i%count === 0).map((c,i)=>{
-                        return (
-                        <button className={`button is-warning is-rounded ${i*count === actual ? '': 'is-outlined'}`} key={i} onClick={() => changePage(i*count)}>
-                            <span className="icon">
-                                <i className="fas fa-comment-dots"></i>
-                            </span>
-                        </button>
-                    )})}
+                <ul className="pagination-list columns">
+                    <div className="column is-two-third">
+                        {children}
+                    </div>
+                    
                 </ul>
             </nav>
     )
@@ -118,7 +113,7 @@ const Pagination = ({count, max, actual, changePage}) => {
 
 const Comments = () => {
 
-    const count = 3
+    const count = 1
     const [page, setPage] = useState(0);
     
     let $comentarios = comentarios.map((c,i) => (
@@ -128,16 +123,15 @@ const Comments = () => {
     ))
 
     return (
-      <section className="hero is-info is-fullheight" id="Comments">
+      <section className="hero is-info" id="Comments">
         <div className="hero-body">
           <div className="container">
-            <h2 className="title">
+            <h2 className="title has-text-centered">
               Comentarios
             </h2>
-            <ul className="content">
+            <Pagination count={count} max={comentarios.length} actual={page} changePage={setPage}>
                 {$comentarios.filter((c,i) => i<(count+page) && (0+page)<=i)}
-            </ul>
-            <Pagination count={count} max={comentarios.length} actual={page} changePage={setPage} />
+            </Pagination>
           </div>
         </div>
       </section>

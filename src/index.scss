@@ -36,3 +36,9 @@ body {
 .text-overlay {
     z-index: 2;
 }
+
+.is-240 {
+    min-height: 100px;
+    max-height: 101px;
+    overflow: auto
+}
