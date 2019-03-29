@@ -1,4 +1,4 @@
-import React, {useState, useLayoutEffect} from 'react';
+import React, {useState} from 'react';
 
 const comentarios = [
     {
@@ -87,9 +87,38 @@ const Comment = ({name='Anonymus',message='',link=''}) => {
     )
 }
 
+const Pagination = ({count, max, actual, changePage}) => {
+    const items =  [ ...Array(max).keys() ];
+
+    return (
+        <nav className="pagination is-centered" role="navigation" aria-label="pagination">
+                <button className="pagination-previous button is-rounded is-warning" onClick={() => changePage(actual-count)}>
+                    <span className="icon">
+                        <i className="fas fa-chevron-circle-left "></i>
+                    </span>
+                </button>
+                <button className="pagination-next button is-rounded is-warning" onClick={() => changePage(actual+count)}>
+                    <span className="icon">
+                        <i className="fas fa-chevron-circle-right "></i>
+                    </span>
+                </button>
+                <ul className="pagination-list">
+                    {items.filter((c,i) => i%count === 0).map((c,i)=>{
+                        return (
+                        <button className={`button is-warning is-rounded ${i*count === actual ? '': 'is-outlined'}`} key={i} onClick={() => changePage(i*count)}>
+                            <span className="icon">
+                                <i className="fas fa-comment-dots"></i>
+                            </span>
+                        </button>
+                    )})}
+                </ul>
+            </nav>
+    )
+}
+
 const Comments = () => {
 
-    const count = Math.floor(comentarios.length/2)
+    const count = 3
     const [page, setPage] = useState(0);
     
     let $comentarios = comentarios.map((c,i) => (
@@ -99,7 +128,7 @@ const Comments = () => {
     ))
 
     return (
-      <section className="hero is-info is-fullheight-with-navbar" id="Comments">
+      <section className="hero is-info is-fullheight" id="Comments">
         <div className="hero-body">
           <div className="container">
             <h2 className="title">
@@ -108,21 +137,7 @@ const Comments = () => {
             <ul className="content">
                 {$comentarios.filter((c,i) => i<(count+page) && (0+page)<=i)}
             </ul>
-            <nav className="pagination is-centered" role="navigation" aria-label="pagination">
-                <button className="pagination-previous button is-rounded is-warning" onClick={() => setPage(page-count)}>
-                    <span className="icon">
-                        <i className="fas fa-chevron-circle-left "></i>
-                    </span>
-                </button>
-                <button className="pagination-next button is-rounded is-warning" onClick={() => setPage(page+count)}>
-                    <span className="icon">
-                        <i className="fas fa-chevron-circle-right "></i>
-                    </span>
-                </button>
-                <ul className="pagination-list">
-                    <progress className="progress is-warning is-large" value={page === 0 ? 0 : page+count} max={comentarios.length}></progress>
-                </ul>
-            </nav>
+            <Pagination count={count} max={comentarios.length} actual={page} changePage={setPage} />
           </div>
         </div>
       </section>
