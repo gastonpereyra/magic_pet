@@ -44,7 +44,7 @@ const comentarios = [
 
 const Comment = ({name='Anonymus',message='',link=''}) => {
 
-    const message_color = (url='') => {
+    const message_color = (url='') => { 
         if (url.includes('twitter')) 
             return 'message is-light';
         else if (url.includes('facebook'))
@@ -92,12 +92,12 @@ const Pagination = ({count, max, actual, changePage}) => {
 
     return (
         <nav className="pagination is-centered" role="navigation" aria-label="pagination">
-                <button className="pagination-previous button is-rounded is-warning" onClick={() => changePage(actual-count)}>
+                <button className="pagination-previous button is-rounded is-warning" onClick={() => changePage( actual>0 ? actual-count : 0)}>
                     <span className="icon">
                         <i className="fas fa-chevron-circle-left "></i>
                     </span>
                 </button>
-                <button className="pagination-next button is-rounded is-warning" onClick={() => changePage(actual+count)}>
+                <button className="pagination-next button is-rounded is-warning" onClick={() => changePage(actual+count < max ? actual+count : actual)}>
                     <span className="icon">
                         <i className="fas fa-chevron-circle-right "></i>
                     </span>
