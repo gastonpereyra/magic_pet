@@ -2,29 +2,56 @@ import React from 'react';
 
 const productos = [
     {
-        image: "assets/cover.gif",
-        title: "TITULO",
-        message: " asfadsfasd fdsajf asdfj sadfkas dfka sdfdkas fkasd faksd fdas",
-        price: "400",
+        image: "http://alternopolis.com/wp-content/uploads/2014/08/Impossible_bottles_canvas1.gif   ",
+        title: "Atención Médica",
+        message: "Atención 24hs, todo el año, en nuestras sedes o a domicilio.",
+        price: "DEPENDE",
         link: "#Contacto",
         linkMessage: "Ver mas"
     },
     {
-        image: "assets/cover.gif",
-        title: "TITULO",
-        message: " asfadsfasd fdsajf asdfj sadfkas dfka sdfdkas fkasd faksd fdas",
-        price: "400",
+        image: "http://alternopolis.com/wp-content/uploads/2014/08/%C2%A9-Rafael-Varona-2.gif",
+        title: "Entrenamiento",
+        message: "En nuestras instalaciones entrenamos a sus animales para que no pierdan forma ni esplendor.",
+        price: "$5400",
         link: "#Contacto",
-        linkMessage: "Ver mas"
+        linkMessage: "Contactenos"
     },
     {
-        image: "assets/cover.gif",
-        title: "TITULO",
-        message: " asfadsfasd fdsajf asdfj sadfkas dfka sdfdkas fkasd faksd fdas",
-        price: "400",
+        image: "http://alternopolis.com/wp-content/uploads/2014/08/%C2%A9-Rafael-Varona-1.gif",
+        title: "Rehabilitación",
+        message: "Nuestros profesionales son especialistas en recuperar todo tipo de fauna al estado más optimo.",
+        price: "10000",
         link: "#Contacto",
-        linkMessage: "Ver mas"
+        linkMessage: "Comuniquese"
+    },
+    {
+        image: "https://66.media.tumblr.com/d46ad1a21c96ad7f90fa0b3be9e46d59/tumblr_od0lr4Patz1v6ye9ro1_500.gif",
+        title: "Adopción",
+        message: "Conozca, hagase amigo y adopté. Muchos nuevos amigos lo estan esperando.",
+        price: "GRATIS",
+        link: "#Contacto",
+        linkMessage: "Aqui"
+    },
+    {   
+        image: "http://img1.joyreactor.com/pics/post/gif-pixel-art-dragon-5025079.gif",
+        title: "Pasear",
+        message: "Venga a pasear con su familia, conozca la fauna y flora de lugares que siempre soñó ver.",
+        price: "5000",
+        link: "#Contacto",
+        linkMessage: "No se lo pierda!"
     }
+    /*
+    ,
+    {
+        image: "assets/",
+        title: "",
+        message: "",
+        price: "",
+        link: "",
+        linkMessage: ""
+    }
+    */
 ];
 
 const Carta = ({imagePath, title, message, price, linkMessage, link}) => {
@@ -53,8 +80,8 @@ const Carta = ({imagePath, title, message, price, linkMessage, link}) => {
                     {message}
                 </div>
             </div>
-            <footer className="card-footer ">
-                <a href={link} className="card-footer-item is-size-5 ">{linkMessage}</a>
+            <footer className="card-footer has-background-dark">
+                <a href={link} className="card-footer-item is-size-5 has-text-light">{linkMessage}</a>
             </footer>
         </div>
     )
