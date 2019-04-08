@@ -111,13 +111,21 @@ const Ficha = ({actual}) => {
                 <div className="content is-large">
                     <h1 className="has-text-light">{actual.name}</h1>
                     <div className="tags has-addons">
-                        <span className="tag is-large is-link">Título : </span>
+                        <span className="tag is-large is-link">Título</span>
                         <span className="tag is-large is-primary">{actual.name}</span>
                     </div>
-                    <b className="has-text-link">Título : </b>{actual.name}<br/>
-                    <b className="has-text-link">Nacionalidad : </b>{actual.nation}<br/>
-                    <b className="has-text-link">Sede : </b>{actual.local}<br/>
-                    <b className="has-text-link">Comentario : </b>{actual.comment}<br/>
+                    <div className="tags has-addons">
+                        <span className="tag is-large is-link">Nacionalidad</span>
+                        <span className="tag is-large is-primary">{actual.nation}</span>
+                    </div>
+                    <div className="tags has-addons">
+                        <span className="tag is-large is-link">Sede</span>
+                        <span className="tag is-large is-primary">{actual.local}</span>
+                    </div>
+                    <div className="tags has-addons">
+                        <span className="tag is-large is-link">Comentario</span>
+                    </div>
+                    {actual.comment}<br/>
                 </div>
             </div>
         </article>
