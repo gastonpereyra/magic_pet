@@ -29,22 +29,22 @@ const Navegacion = ({color="primary", logoUrl="", links=[], changeColor=null, la
                 )) }
             </div>
             <div className="navbar-end">
-                <NavButton icon="fas fa-lightbulb" action={changeColor}/>
-            </div>
+                <div className="navbar-item has-dropdown is-hoverable">
+                    <a className="navbar-link has-text-light">
+                        <span className="icon">
+                            <i className="fas fa-flag"></i>
+                        </span>
+                    </a>
 
-            <div className="navbar-item has-dropdown is-hoverable">
-                <a className="navbar-link">
-                    <span className="icon">
-                        <i className="fas fa-flag"></i>
-                    </span>
-                </a>
-
-                <div className="navbar-dropdown">
-                    {lanValue.map( (item, i) => (
-                        <NavButton name={item} key={i} action={() => changeLan(item)}/>
-                    )) }
+                    <div className="navbar-dropdown">
+                        {lanValue.map( (item, i) => (
+                            <NavButton name={item} key={i} action={() => changeLan(item)}/>
+                        )) }
+                    </div>
                 </div>
+                <NavButton color={color} icon="fas fa-lightbulb" action={changeColor}/>
             </div>
+
         </div>
       </nav>
 

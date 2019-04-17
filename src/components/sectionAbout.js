@@ -1,4 +1,5 @@
 import React from 'react';
+import Section from './section/Section';
 
 const acercaInfo = [
     {
@@ -41,7 +42,7 @@ const InfoBlock = ({imageRoute=null,title='',text=''}) => {
     )
 }
 
-const About = () => {
+const About = ({section="", color="primary"}) => {
     return (
         <section className="hero is-success is-fullheight-with-navbar" id="About">
             <div className="hero-body">
