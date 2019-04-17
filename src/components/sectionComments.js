@@ -123,8 +123,8 @@ const Comments = () => {
     ))
 
     return (
-      <section className="hero is-info" id="Comments">
-        <div className="hero-body">
+      <section className="section has-background-info" id="Comments">
+        
           <div className="container">
             <h2 className="title has-text-centered">
               Comentarios
@@ -133,7 +133,7 @@ const Comments = () => {
                 {$comentarios.filter((c,i) => i<(count+page) && (0+page)<=i)}
             </Pagination>
           </div>
-        </div>
+        
       </section>
     )
 }
